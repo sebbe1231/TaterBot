@@ -93,7 +93,7 @@ class Startup(commands.Cog):
             print(f"Messages deleted: {session.query(DelMessageLog).delete()}")
             session.commit()
 
-    @tasks.loop(minutes=1.0)
+    @tasks.loop(minutes=60.0)
     async def check_warns(self):
         print(f"Looking through warns...: \t{datetime.utcnow()}")
         with Session(engine) as session:
