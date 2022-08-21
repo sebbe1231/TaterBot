@@ -67,7 +67,7 @@ class Startup(commands.Cog):
     @commands.Cog.listener()
     async def on_message(self, message):
         ping = f"<@{self.bot.user.id}>"
-        if ping in message.content:
+        if ping == message.content:
             await message.reply(f"Hiya! Use the command `{await self.bot.get_prefix(message)}help` to get started!")
 
         
